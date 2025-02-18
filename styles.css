@@ -1,0 +1,60 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Ensures background extends dynamically */
+    background: linear-gradient(135deg, #007bff, #00c853);
+    background-attachment: fixed; /* Keeps background fixed even when scrolling */
+    color: white;
+    text-align: center;
+}
+
+.container {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 400px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    transition: height 0.3s ease-in-out; /* Smooth height adjustment */
+}
+
+input, button {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+input {
+    background: white;
+    color: black;
+    width: 75%;
+}
+
+button {
+    background: #ff9800;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button:hover {
+    background: #e68900;
+}
+
+.quiz-container {
+    display: none;
+}
+
+/* Ensures layout remains consistent on mobile */
+@media (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+}

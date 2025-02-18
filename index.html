@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electronics Quiz</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container" id="loginPage">
+        <h2>Enter Your Team Number</h2>
+        <input type="number" id="teamNumber" placeholder="Enter Team Number" min="1" max="10">
+        <button onclick="startQuiz()">Start Quiz</button>
+    </div>
+
+    <div class="container quiz-container" id="quizPage" style="display: none;">
+        <h2>Electronics Quiz</h2>
+        <p id="teamInfo"></p>
+        <p id="timerDisplay">Time Left: 3:00</p>
+        <div id="questionContainer"></div>
+        <p id="clueMessage"></p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

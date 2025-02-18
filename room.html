@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Room Allocation</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Component Locations</h2>
+        <p>Your team has been assigned to the following rooms based on your clues:</p>
+        <ul id="roomList"></ul>
+        <button onclick="goBack()">Return to Home</button>
+    </div>
+
+    <script>
+        const roomMapping = {
+            "Resistor": "Room 101",
+            "LED": "Room 102",
+            "Capacitor": "Room 103",
+            "Diode": "Room 104",
+            "Farad": "Room 105",
+            "Ammeter": "Room 106",
+            "Transistor": "Room 107",
+            "Voltage Regulator": "Room 108",
+            "Fuse": "Room 109",
+            "Zener Diode": "Room 110",
+            "Photodiode": "Room 111",
+            "Potentiometer": "Room 112",
+            "Inductor": "Room 113",
+            "Rectifier": "Room 114",
+            "Relay": "Room 115",
+            "Oscilloscope": "Room 116",
+            "Thermistor": "Room 117",
+            "Oscillator": "Room 118",
+            "Microphone": "Room 119",
+            "Transformer": "Room 120",
+            "LDR": "Room 121",
+            "Motor": "Room 122",
+            "Op-Amp": "Room 123",
+            "Piezoelectric Sensor": "Room 124",
+            "Solar Panel": "Room 125",
+            "Push-Button": "Room 126",
+            "Buzzer": "Room 127",
+            "Antenna": "Room 128"
+        };
+
+        // Get current team
+        const currentTeam = localStorage.getItem("currentTeam");
+        if (currentTeam) {
+            const clues = JSON.parse(localStorage.getItem(`team${currentTeam}_clues`)) || [];
+            const roomList = document.getElementById("roomList");
+
+            clues.forEach(clue => {
+                const room = roomMapping[clue] || "Unknown Room";
+                const listItem = document.createElement("li");
+                listItem.textContent = `${clue} → ${room}`;
+                roomList.appendChild(listItem);
+            });
+        }
+
+        function goBack() {
+            localStorage.clear(); // Clear storage for a fresh start
+            window.location.href = "index.html";
+        }
+    </script>
+</body>
+</html>
